@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 export const Navbar = () => {
   return (
-    <nav className='w-full flex justify-between items-center px-6 py-4 shadow-md bg-white fixed top-0 left-0 z-50'>
+    <nav className='w-full flex justify-between items-center px-6 py-4 shadow-md bg-[#fff] fixed top-0 left-0 z-50'>
       {/* Logo */}
       <Link href='/' className='text-xl font-bold'>
         <Image
@@ -19,7 +19,6 @@ export const Navbar = () => {
           className='w-28 object-contain'
         />
       </Link>
-s
       {/* Social Icons */}
       <div className='flex gap-4'>
         <Link
