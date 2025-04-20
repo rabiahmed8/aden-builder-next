@@ -46,10 +46,10 @@ export const Hero = () => {
           }}
           transition={{
             duration: 0.6,
-            delay: 2,
+            delay: 1.5,
             easing: 'ease-out',
           }}
-          className='text-lg md:text-xl'
+          className='text-3xl md:text-3xl'
         >
           Aden Builders and Developers
         </motion.p>
