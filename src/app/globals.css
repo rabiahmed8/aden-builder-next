@@ -10,6 +10,8 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-primary: #77D272;
+  --color-secondary: #017373;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +25,49 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  /* Float animation */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    50% {
+      transform: translateY(-6px);
+      opacity: 0.9;
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Gradient fade-in/out effect */
+  @keyframes fadeGradient {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.6;
+    }
+  }
+
+  .bottom-fade-mask {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bottom-fade-mask::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60%; /* Adjust to control the height of the gradient */
+    background: linear-gradient(to top, white 0%, transparent 100%);
+    pointer-events: none;
+    animation: fadeGradient 3s ease-in-out infinite;
+  }
 }
